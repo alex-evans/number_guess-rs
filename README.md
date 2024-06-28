@@ -13,6 +13,6 @@ Number Guessing Game in Rust for learning
 - [x] As a player, I want to be congratulated and shown the number of attempts it took me if I guess the correct number.
 - [x] As a player, I want to be informed that I lost and shown the correct number if I run out of attempts.
 - [x] As a player, I want to be asked if I want to play again after the game ends.
-- [ ] As a player, I want the game to keep track of my best score (fewest attempts to guess correctly), so that I can try to beat it in subsequent games.
-- [ ] As a player, I want the game to have a clean and user-friendly interface, so that it's easy to understand and interact with.
-- [ ] As a developer, I want to follow best practices for Rust programming, including error handling, modularization, and documentation.
+- [x] As a player, I want the game to keep track of my best score (fewest attempts to guess correctly), so that I can try to beat it in subsequent games.
+- [x] As a player, I want the game to have a clean and user-friendly interface, so that it's easy to understand and interact with.
+- [x] As a developer, I want to follow best practices for Rust programming, including error handling, modularization, and documentation.
