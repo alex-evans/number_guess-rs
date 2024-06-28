@@ -4,22 +4,13 @@ use std::error::Error;
 use std::io;
 use rand::Rng;
 
-// #[derive(Parser, Debug)]
-// #[command(version, about, long_about = None)]
-// pub struct Config {
-//     player_name: String,
-// }
-
-// impl Config {
-//     pub fn build() -> Result<Config, &'static str> {
-//         let args = Config::parse();
-//         Ok(args)
-//     }
-// }
-
 pub fn run() -> Result<(), Box<dyn Error>> {
     println!("Hello and welcome to Number Guessing Game!");
-    
+    println!("The goal of the game is to guess the secret number between 1 and 100 in as few tries as possible.");
+    println!("You will be given a maximum of 10 tries to guess the number.");
+    println!("Good luck!");
+    println!("");
+
     let player_name = get_player_name().unwrap();
     let mut top_score = 0;
     println!("Welcome, {}!", player_name);
@@ -40,7 +31,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
                 },
                 "y" => {
                     println!("Great! Let's play again!");
-                    let top_score = run_guess_loop(top_score).unwrap();
+                    top_score = run_guess_loop(top_score).unwrap();
                     continue;
                 },
                 _ => {
@@ -49,7 +40,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
                 }
             }
         } else {
-            let top_score = run_guess_loop(top_score).unwrap();
+            top_score = run_guess_loop(top_score).unwrap();
             played_already = true;
         }
     }
@@ -77,7 +68,7 @@ fn get_player_name() -> Result<String, Box<dyn Error>>{
 }
 
 
-fn run_guess_loop(top_score: u32) -> Result<u32, Box<dyn Error>> {
+fn run_guess_loop(mut top_score: u32) -> Result<u32, Box<dyn Error>> {
     let secret_number = rand::thread_rng().gen_range(1..=100);
     let max_guesses = 10;
     let mut guesses = 0;
